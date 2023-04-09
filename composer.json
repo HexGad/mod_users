@@ -1,5 +1,5 @@
 {
-    "name": "HexGad/users",
+    "name": "hexgad/users",
     "description": "",
     "authors": [
         {
@@ -9,7 +9,7 @@
     ],
     "require": {
         "nwidart/laravel-modules": "^10.0",
-        "HexGad/users": "*"
+        "hexgad/users": "*"
     },
     "extra": {
         "laravel": {
