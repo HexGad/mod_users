@@ -8,15 +8,14 @@
         }
     ],
     "require": {
-        "nwidart/laravel-modules": "^10.0",
-        "hexgad/users": "*"
+        "yajra/laravel-datatables-oracle": "^10.3.1"
     },
     "extra": {
         "laravel": {
-            "providers": [],
-            "aliases": {
-
-            }
+            "providers": [
+                "HexGad\\Users\\Providers\\UsersServiceProvider"
+            ],
+            "aliases": {}
         }
     },
     "autoload": {

@@ -11,6 +11,12 @@
 |
 */
 
-Route::prefix('users')->group(function() {
-    Route::get('/', [\HexGad\Users\Http\Controllers\UsersController::class,'index']);
-});
+use HexGad\Users\Http\Controllers\UsersController;
+use \Illuminate\Support\Facades\Route;
+
+Route::prefix(config('dashboard.urls.prefix'))
+    ->as(config('dashboard.urls.route_prefix'))
+    ->middleware('auth:dashboard')
+    ->group(function () {
+        Route::resource('users', UsersController::class);
+    });
