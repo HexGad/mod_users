@@ -6,7 +6,7 @@ import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     build: {
-        outDir: '../../app/public/build-users',
+        outDir: __dirname + '/dist/build-users',
         emptyOutDir: true,
         manifest: true,
     },
