@@ -49,7 +49,7 @@ class UsersServiceProvider extends ServiceProvider
     protected function registerAssets()
     {
         $this->publishes([
-            module_path($this->moduleName, 'dist/build-users') => public_path(),
+            module_path($this->moduleName, 'dist/build-users') => public_path('build-templates'),
         ], 'modules-assets');
     }
 
