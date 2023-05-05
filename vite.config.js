@@ -1,8 +1,10 @@
+const app_path = '../../html';
 const dotenvExpand = require('dotenv-expand');
-dotenvExpand(require('dotenv').config({ path: '../../.env'/*, debug: true*/}));
+dotenvExpand(require('dotenv').config({ path: app_path + '/.env'/*, debug: true*/}));
 
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     build: {
@@ -11,6 +13,14 @@ export default defineConfig({
         manifest: true,
     },
     plugins: [
+        vue({
+            template: {
+                transformAssetUrls: {
+                    base: null,
+                    includeAbsolute: false,
+                },
+            },
+        }),
         laravel({
             publicDirectory: '../../app/public',
             buildDirectory: 'build-users',
@@ -21,4 +31,19 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.esm-bundler.js',
+        },
+    },
+
+    server: {
+        host: true,
+        hmr: {
+            host: 'localhost',
+        },
+        watch: {
+            usePolling: true,
+        },
+    },
 });

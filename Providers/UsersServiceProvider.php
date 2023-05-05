@@ -50,7 +50,7 @@ class UsersServiceProvider extends ServiceProvider
     {
         $this->publishes([
             module_path($this->moduleName, 'dist/build-users') => public_path(),
-        ], 'assets');
+        ], 'modules-assets');
     }
 
 
