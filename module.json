@@ -3,7 +3,7 @@
     "alias": "users",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 1,
     "providers": [
         "HexGad\\Users\\Providers\\UsersServiceProvider"
     ],
